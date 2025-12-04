@@ -95,8 +95,8 @@
                     <thead>
                         <tr>
                             <th>カレンダーの内容</th>
-                            <th>iCalファイル</th>
                             <th>購読 (Webcal)</th>
+                            <th>iCalファイル</th>
                         </tr>
                     </thead>
                     <tbody id="calendar-list">
@@ -163,8 +163,8 @@
 
             row.innerHTML = `
                 <td>${cal.highlight ? '<strong>' + cal.name + '</strong>' : cal.name}</td>
-                <td><a href="${httpsUrl}" class="btn-dl" target="_blank">${cal.file}</a></td>
                 <td><a href="${webcalUrl}" class="btn-sub" role="button">📅 購読する</a></td>
+                <td><a href="${httpsUrl}" class="btn-dl" target="_blank">${cal.file}</a></td>
             `;
             tbody.appendChild(row);
         });
