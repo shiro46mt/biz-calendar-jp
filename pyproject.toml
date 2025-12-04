@@ -1,0 +1,10 @@
+[project]
+name = "biz-calendar-jp"
+version = "0.1.0"
+description = "日本の営業日カレンダー"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "icalendar>=6.3.2",
+    "jpholiday>=1.0.2",
+]

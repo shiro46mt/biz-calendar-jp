@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本の営業日カレンダー</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* カスタムスタイル */
+        body { padding-top: 2rem; }
+        header { text-align: center; margin-bottom: 3rem; }
+        .container { max-width: 900px; }
+
+        /* テーブルのスタイル */
+        table { white-space: nowrap; }
+        td a { text-decoration: none; font-weight: bold; }
+
+        /* ボタン風リンク */
+        .btn-sub {
+            background-color: #388e3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .btn-dl {
+            color: #0288d1;
+        }
+
+        /* フッター */
+        footer {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            opacity: 0.7;
+        }
+        /* コピーライトのテキスト */
+        .copyright {
+            margin: 0;
+        }
+        /* GitHubのリンク全体 */
+        footer a {
+            display: inline-flex; /* アイコンとテキストをきれいに中央揃えにする */
+            align-items: center;   /* 垂直方向の中央揃え */
+            gap: 8px; /* アイコンとテキストの間のスペース */
+            color: inherit;
+            text-decoration: none;
+        }
+        /* アイコンのスタイル */
+        footer .fa-github {
+            font-size: 24px; /* アイコンのサイズ */
+        }
+        /* テキストのスタイル */
+        footer a span {
+            text-decoration: underline;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 600px) {
+            table { display: block; overflow-x: auto; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>日本の営業日カレンダー</h1>
+            <p>日本の「営業日」を定義したiCalendarデータ配布ページ</p>
+        </header>
+
+        <section>
+            <h2>📅 定義・条件</h2>
+            <ul>
+                <li><strong>期間:</strong> 2025年1月 ～ 2029年12月</li>
+                <li><strong>営業日:</strong> 平日（月～金）</li>
+                <li><strong>休業日（除外日）:</strong>
+                    <ul>
+                        <li>土曜日・日曜日</li>
+                        <li>日本の国民の祝日</li>
+                        <li>年末年始休業（12月31日、1月1日～1月3日）</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔗 カレンダーの一覧</h2>
+            <p><small>※ iPhone/Macの方は「購読」ボタンで即座に追加できます。</small></p>
+            <figure>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>カレンダーの内容</th>
+                            <th>iCalファイル</th>
+                            <th>購読 (Webcal)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-list">
+                        </tbody>
+                </table>
+            </figure>
+        </section>
+
+        <section>
+            <h2>使い方</h2>
+            <article>
+                <h3>🗓 Googleカレンダー</h3>
+                <ol>
+                    <li>上の表の <strong>「iCalファイル」</strong> のリンクを右クリックし、「リンクのアドレスをコピー」を選択。</li>
+                    <li>Googleカレンダーを開く。</li>
+                    <li>左サイドバー「他のカレンダー」横の「＋」をクリック → 「URLで追加」。</li>
+                    <li>URLを貼り付けて追加。</li>
+                </ol>
+            </article>
+            <article>
+                <h3>🍎 Apple iCloudカレンダー</h3>
+                <p>上の表の <strong>「📅 購読する」</strong> ボタンをタップすると、自動的にカレンダーアプリが起動して追加できます。</p>
+            </article>
+        </section>
+
+        <footer>
+            <p class="copyright">&copy; 2025 SHIRO</p>
+            <a href="https://github.com/shiro46mt/biz-calendar-jp" target="_blank" rel="noopener noreferrer" aria-label="GitHub リポジトリ">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </footer>
+    </main>
+
+    <script>
+        // カレンダーデータの定義
+        const calendars = [
+            { name: "全営業日", file: "all.ics", highlight: true },
+            { name: "月初・月末営業日", file: "first_and_last.ics", highlight: true },
+            { name: "5の倍数営業日", file: "days_of_5.ics", highlight: true }
+        ];
+
+        // 第1〜第23営業日を追加
+        for (let i = 1; i <= 23; i++) {
+            const num = i.toString().padStart(2, '0'); // 01, 02...
+            calendars.push({
+                name: `第${i}営業日`,
+                file: `day_${num}.ics`,
+                highlight: false
+            });
+        }
+
+        // テーブル生成ロジック
+        const tbody = document.getElementById('calendar-list');
+        const baseUrl = `raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data`;
+
+        calendars.forEach(cal => {
+            const row = document.createElement('tr');
+
+            // HTTPSリンク
+            const httpsUrl = `https://${baseUrl}/${cal.file}`;
+            // Webcalリンク
+            const webcalUrl = `webcal://${baseUrl}/${cal.file}`;
+
+            row.innerHTML = `
+                <td>${cal.highlight ? '<strong>' + cal.name + '</strong>' : cal.name}</td>
+                <td><a href="${httpsUrl}" class="btn-dl" target="_blank">${cal.file}</a></td>
+                <td><a href="${webcalUrl}" class="btn-sub" role="button">📅 購読する</a></td>
+            `;
+            tbody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
