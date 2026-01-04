@@ -43,6 +43,9 @@ Googleカレンダー、Outlook、Appleカレンダーなどにインポート�
 | 第22営業日 | [day_22.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_22.ics) |
 | 第23営業日 | [day_23.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_23.ics) |
 
+> [!NOTE]
+> 全営業日 (all.ics) は最初の1年分のみを含みます。それ以降は `data/all_yyyy.ics` を参照してください。
+
 ## 使い方
 
 ### 🗓 Googleカレンダー
