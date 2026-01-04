@@ -1,3 +1,4 @@
+from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -106,14 +107,18 @@ def main():
     biz_data = get_business_days_list(START_DATE, END_DATE)
 
     # --- パターン1: 営業日すべて ---
-    events_p1 = []
+    events_p1_dict = defaultdict(list)
     for d in biz_data:
-        events_p1.append({
+        year = d['date'].year
+        events_p1_dict[year].append({
             'date': d['date'],
             'title': f"第{d['nth']}営業日",
             'type': 'all'
         })
-    create_ics_file("all.ics", events_p1, "全営業日カレンダー")
+    year = START_DATE.year
+    create_ics_file("all.ics", events_p1_dict[year], "全営業日カレンダー")
+    for year, events_p1 in events_p1_dict.items():
+        create_ics_file(f"all_{year}.ics", events_p1, f"全営業日カレンダー（{year}年）")
 
     # --- パターン2: 各月の第N営業日 (例として第1〜第5を作成) ---
     # ※必要に応じて range(1, 6) を変更してください
