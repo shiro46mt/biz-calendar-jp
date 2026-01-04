@@ -8,8 +8,8 @@ from icalendar import Calendar, Event
 # ==========================================
 # 設定エリア
 # ==========================================
-START_DATE = date(2025, 1, 1)
-END_DATE = date(2029, 12, 31)
+START_DATE = date(2026, 1, 1)
+END_DATE = date(2030, 12, 31)
 OUTPUT_DIR = Path(__file__).parents[1] / 'data'  # ファイルの保存先
 
 # 年末年始の特別休業日（祝日以外で休みにする日）
