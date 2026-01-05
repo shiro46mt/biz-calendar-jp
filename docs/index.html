@@ -103,7 +103,6 @@
                         </tbody>
                 </table>
             </figure>
-            <p><small>⚠️全営業日 (all.ics) は最初の1年分のみを含みます。</small></p>
         </section>
 
         <section>
@@ -152,7 +151,7 @@
 
         // テーブル生成ロジック
         const tbody = document.getElementById('calendar-list');
-        const baseUrl = `raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data`;
+        const baseUrl = `shiro46mt.github.io/biz-calendar-jp/data`;
 
         calendars.forEach(cal => {
             const row = document.createElement('tr');

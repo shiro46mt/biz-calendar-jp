@@ -1,4 +1,3 @@
-from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -10,7 +9,7 @@ from icalendar import Calendar, Event
 # ==========================================
 START_DATE = date(2026, 1, 1)
 END_DATE = date(2030, 12, 31)
-OUTPUT_DIR = Path(__file__).parents[1] / 'data'  # ファイルの保存先
+OUTPUT_DIR = Path(__file__).parents[1] / 'docs/data'  # ファイルの保存先
 
 # 年末年始の特別休業日（祝日以外で休みにする日）
 # 1/1は祝日判定されるため、ここでは1/2, 1/3, 12/31を指定
@@ -107,18 +106,14 @@ def main():
     biz_data = get_business_days_list(START_DATE, END_DATE)
 
     # --- パターン1: 営業日すべて ---
-    events_p1_dict = defaultdict(list)
+    events_p1 = []
     for d in biz_data:
-        year = d['date'].year
-        events_p1_dict[year].append({
+        events_p1.append({
             'date': d['date'],
             'title': f"第{d['nth']}営業日",
             'type': 'all'
         })
-    year = START_DATE.year
-    create_ics_file("all.ics", events_p1_dict[year], "全営業日カレンダー")
-    for year, events_p1 in events_p1_dict.items():
-        create_ics_file(f"all_{year}.ics", events_p1, f"全営業日カレンダー（{year}年）")
+    create_ics_file("all.ics", events_p1, "全営業日カレンダー")
 
     # --- パターン2: 各月の第N営業日 (例として第1〜第5を作成) ---
     # ※必要に応じて range(1, 6) を変更してください

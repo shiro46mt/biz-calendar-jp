@@ -16,35 +16,32 @@ Googleカレンダー、Outlook、Appleカレンダーなどにインポート�
 
 | カレンダーの内容 | iCalファイル |
 | :--- | :--- |
-| **全営業日** | [all.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/all.ics) |
-| **月初・月末営業日** | [first_and_last.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/first_and_last.ics) |
-| **5の倍数営業日** | [days_of_5.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/days_of_5.ics) |
-| 第1営業日 | [day_01.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_01.ics) |
-| 第2営業日 | [day_02.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_02.ics) |
-| 第3営業日 | [day_03.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_03.ics) |
-| 第4営業日 | [day_04.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_04.ics) |
-| 第5営業日 | [day_05.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_05.ics) |
-| 第6営業日 | [day_06.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_06.ics) |
-| 第7営業日 | [day_07.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_07.ics) |
-| 第8営業日 | [day_08.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_08.ics) |
-| 第9営業日 | [day_09.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_09.ics) |
-| 第10営業日 | [day_10.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_10.ics) |
-| 第11営業日 | [day_11.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_11.ics) |
-| 第12営業日 | [day_12.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_12.ics) |
-| 第13営業日 | [day_13.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_13.ics) |
-| 第14営業日 | [day_14.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_14.ics) |
-| 第15営業日 | [day_15.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_15.ics) |
-| 第16営業日 | [day_16.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_16.ics) |
-| 第17営業日 | [day_17.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_17.ics) |
-| 第18営業日 | [day_18.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_18.ics) |
-| 第19営業日 | [day_19.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_19.ics) |
-| 第20営業日 | [day_20.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_20.ics) |
-| 第21営業日 | [day_21.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_21.ics) |
-| 第22営業日 | [day_22.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_22.ics) |
-| 第23営業日 | [day_23.ics](https://raw.githubusercontent.com/shiro46mt/biz-calendar-jp/main/data/day_23.ics) |
-
-> [!NOTE]
-> 全営業日 (all.ics) は最初の1年分のみを含みます。それ以降は `data/all_yyyy.ics` を参照してください。
+| **全営業日** | [all.ics](https://shiro46mt.github.io/biz-calendar-jp/data/all.ics) |
+| **月初・月末営業日** | [first_and_last.ics](https://shiro46mt.github.io/biz-calendar-jp/data/first_and_last.ics) |
+| **5の倍数営業日** | [days_of_5.ics](https://shiro46mt.github.io/biz-calendar-jp/data/days_of_5.ics) |
+| 第1営業日 | [day_01.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_01.ics) |
+| 第2営業日 | [day_02.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_02.ics) |
+| 第3営業日 | [day_03.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_03.ics) |
+| 第4営業日 | [day_04.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_04.ics) |
+| 第5営業日 | [day_05.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_05.ics) |
+| 第6営業日 | [day_06.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_06.ics) |
+| 第7営業日 | [day_07.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_07.ics) |
+| 第8営業日 | [day_08.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_08.ics) |
+| 第9営業日 | [day_09.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_09.ics) |
+| 第10営業日 | [day_10.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_10.ics) |
+| 第11営業日 | [day_11.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_11.ics) |
+| 第12営業日 | [day_12.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_12.ics) |
+| 第13営業日 | [day_13.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_13.ics) |
+| 第14営業日 | [day_14.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_14.ics) |
+| 第15営業日 | [day_15.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_15.ics) |
+| 第16営業日 | [day_16.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_16.ics) |
+| 第17営業日 | [day_17.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_17.ics) |
+| 第18営業日 | [day_18.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_18.ics) |
+| 第19営業日 | [day_19.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_19.ics) |
+| 第20営業日 | [day_20.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_20.ics) |
+| 第21営業日 | [day_21.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_21.ics) |
+| 第22営業日 | [day_22.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_22.ics) |
+| 第23営業日 | [day_23.ics](https://shiro46mt.github.io/biz-calendar-jp/data/day_23.ics) |
 
 ## 使い方
 
